@@ -1,14 +1,5 @@
-type Team = {
-    name: string,
-    score: number,
-    logo: string,
-}
-
-type Match = {
-    id: string,
-    date: string,
-    teams: [Team, Team]
-}
+import MatchCard from "./MatchCard.js"
+import { Match } from "./types.js";
 
 ((): void => {
     fetch(`http://localhost:8080/eurolyga`)
@@ -16,9 +7,9 @@ type Match = {
         .then((matches: Match[]) => {
             const matchesContainer = document.querySelector('#matchesContainer') as HTMLDivElement;
             matches.forEach(match => {
-            
+                const matchDiv = new MatchCard(match).render();
 
-            matchesContainer?.append();
+            matchesContainer.append(matchDiv);
         })
     });
 })()

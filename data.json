@@ -2,7 +2,7 @@
     "eurolyga":[
         {   
             "id": "dba5",
-            "date": "2025-02-06",
+            "date": "2025-02-06T20:00",
             "team1": {
                 "name": "Žalgiris",
                 "score": 87,
@@ -16,7 +16,7 @@
         },
         {
             "id": "97f7",
-            "date": "2025-02-07",
+            "date": "2025-02-07T21:30",
             "team1": {
                 "name": "Paris",
                 "score": 0,

@@ -1,32 +1,36 @@
 {
-    "eurolyga":[
-        {   
+    "eurolyga": [
+        {
             "id": "dba5",
             "date": "2025-02-06T20:00",
-            "team1": {
-                "name": "Žalgiris",
-                "score": 87,
-                "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/sE2i94Zg7RoeYbDpswDTKA_96x96.png"
-            },
-            "team2": {
-                "name": "Milano",
-                "score": 89,
-                "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/IRVMGMJuRZ-MShr-pWg0GA_96x96.png"
-            }
+            "teams": [
+                {
+                    "name": "Žalgiris",
+                    "score": 87,
+                    "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/sE2i94Zg7RoeYbDpswDTKA_96x96.png"
+                },
+                {
+                    "name": "Milano",
+                    "score": 89,
+                    "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/IRVMGMJuRZ-MShr-pWg0GA_96x96.png"
+                }
+            ]
         },
         {
             "id": "97f7",
             "date": "2025-02-07T21:30",
-            "team1": {
-                "name": "Paris",
-                "score": 0,
-                "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/YYLkXDVtExJ5W3Lyoku4KA_96x96.png"
-            },
-            "team2": {
-                "name": "Bayern Munich",
-                "score": 0,
-                "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/k8YsF6LR_YW5Z6yarPX1yA_96x96.png"
-            }
+            "teams": [
+                {
+                    "name": "Paris",
+                    "score": 0,
+                    "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/YYLkXDVtExJ5W3Lyoku4KA_96x96.png"
+                },
+                {
+                    "name": "Bayern Munich",
+                    "score": 0,
+                    "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/k8YsF6LR_YW5Z6yarPX1yA_96x96.png"
+                }
+            ]
         }
     ]
 }

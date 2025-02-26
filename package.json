@@ -1,0 +1,12 @@
+{
+  "name": "eurolyga",
+  "version": "1.0.0",
+  "description": "\"korteles atvaizduojancios buvuses ir busimas rungtynes ir galimybe korteles kurti redaguoti ir trinti\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "json": "json-server ./data.json --port 8080" 
+  },
+  "author": "tomasbaublys",
+  "license": "ISC"
+}

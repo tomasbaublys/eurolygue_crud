@@ -1,36 +1,66 @@
 {
-    "eurolyga": [
+  "eurolyga": [
+    {
+      "id": "97f8",
+      "date": "2025-02-28T21:30",
+      "teams": [
         {
-            "id": "dba5",
-            "date": "2025-02-06T20:00",
-            "teams": [
-                {
-                    "name": "Žalgiris",
-                    "score": 87,
-                    "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/sE2i94Zg7RoeYbDpswDTKA_96x96.png"
-                },
-                {
-                    "name": "Milano",
-                    "score": 89,
-                    "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/IRVMGMJuRZ-MShr-pWg0GA_96x96.png"
-                }
-            ]
+          "name": "Paris",
+          "score": 0,
+          "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/YYLkXDVtExJ5W3Lyoku4KA_96x96.png"
         },
         {
-            "id": "97f7",
-            "date": "2025-02-27T21:30",
-            "teams": [
-                {
-                    "name": "Paris",
-                    "score": 0,
-                    "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/YYLkXDVtExJ5W3Lyoku4KA_96x96.png"
-                },
-                {
-                    "name": "Bayern Munich",
-                    "score": 0,
-                    "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/k8YsF6LR_YW5Z6yarPX1yA_96x96.png"
-                }
-            ]
+          "name": "Bayern Munich",
+          "score": 0,
+          "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/k8YsF6LR_YW5Z6yarPX1yA_96x96.png"
         }
-    ]
+      ]
+    },
+    {
+      "id": "97f9",
+      "date": "2025-03-01T21:30",
+      "teams": [
+        {
+          "name": "Paris",
+          "score": 0,
+          "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/YYLkXDVtExJ5W3Lyoku4KA_96x96.png"
+        },
+        {
+          "name": "Bayern Munich",
+          "score": 0,
+          "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/k8YsF6LR_YW5Z6yarPX1yA_96x96.png"
+        }
+      ]
+    },
+    {
+      "id": "d040",
+      "teams": [
+        {
+          "name": "Žalgiris",
+          "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/sE2i94Zg7RoeYbDpswDTKA_96x96.png",
+          "score": 73
+        },
+        {
+          "name": "Alba Berlin",
+          "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/xDuNCHuIMM1IdhVV6Llckg_48x48.png",
+          "score": 53
+        }
+      ],
+      "date": "2025-02-04T20:00"
+    },
+    {
+      "id": "31f0",
+      "teams": [
+        {
+          "name": "Real Madrid",
+          "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/WWdQto0ldKBa6aPUyorbZA_48x48.png"
+        },
+        {
+          "name": "Barcelona",
+          "logo": "https://ssl.gstatic.com/onebox/media/sports/logos/uzS4QsYWjY-yE-pacSx2Lw_48x48.png"
+        }
+      ],
+      "date": "2025-02-27T21:45"
+    }
+  ]
 }

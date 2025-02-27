@@ -3,6 +3,7 @@ import { Match } from "./types.js";
 export default class MatchCard{
   private match: Match;
   constructor(props: Match){
+    console.log(props);
     this.match = props;
   }
   render(){

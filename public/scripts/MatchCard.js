@@ -1,5 +1,6 @@
 export default class MatchCard {
     constructor(props) {
+        console.log(props);
         this.match = props;
     }
     render() {

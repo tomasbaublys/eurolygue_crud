@@ -1,19 +1,24 @@
 import MatchCard from "./MatchCard.js";
-import { Match } from "./types.js";
+import { Match, Team } from "./types.js";
+
+const addMatchToScreen = (match: Match): void => {
+  const matchesContainer = document.querySelector('#matchesContainer') as HTMLDivElement;
+  const matchDiv = new MatchCard(match).render();
+  matchesContainer.append(matchDiv);
+  // matchesContainer?.append();
+  // if(matchesContainer){
+  //   matchesContainer.append()
+  // }
+}
 
 // fetch data from API and display it on screen
 (():void => {
   fetch(`http://localhost:8080/eurolyga`)
     .then(res => res.json())
     .then((matches: Match[]) => {
-      const matchesContainer = document.querySelector('#matchesContainer') as HTMLDivElement;
+      matches.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
       matches.forEach(match => {
-        const matchDiv = new MatchCard(match).render();
-        matchesContainer.append(matchDiv);
-        // matchesContainer?.append();
-        // if(matchesContainer){
-        //   matchesContainer.append()
-        // }
+        addMatchToScreen(match);
       });
     });
 })();
@@ -24,11 +29,16 @@ import { Match } from "./types.js";
   addForm.addEventListener('submit', e => {
     e.preventDefault();
     
+    type HelperTypeS = Team & {
+      [key: string]: string | number | boolean | undefined 
+    };
     type HelperType = Omit<Match, 'id'> & {
-      [key: string]: string | number | boolean | undefined
+      [key: string]: string | number | boolean | undefined | [HelperTypeS, HelperTypeS],
+      teams: [HelperTypeS, HelperTypeS]
     };
 
     const formData = new FormData(addForm);
+    addForm.reset();
     const formInputs = { teams: [{},{}] } as HelperType;
     formData.forEach((value, key) => {
       // console.log(value, key);
@@ -46,6 +56,19 @@ import { Match } from "./types.js";
       }
     });
     console.log(formInputs);
+
+    fetch(`http://localhost:8080/eurolyga`, {
+      method: "POST",
+      headers: {
+        "Content-Type":"application/json"
+      },
+      body: JSON.stringify(formInputs)
+    })
+    .then(res => res.json())
+    .then((match: Match) => {
+      console.log(match);
+      addMatchToScreen(match);
+    });
   });
 })();
 

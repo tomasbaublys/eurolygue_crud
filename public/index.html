@@ -1,63 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eurolygue cards</title>
-    <link rel="stylesheet" href="./main.css">
-    <script type="module" src="./scripts/main.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eurolygos CRUD</title>
+  <link rel="stylesheet" href="./main.css">
+  <script type="module" src="./scripts/main.js"></script>
 </head>
 <body>
-    <header></header>
-    <main>
-        <section>
-            <h2>Add New Match</h2>
-            <form id="addNewMatch">
-                <div>
-                    <label for="matchDate">Date of the match:</label>
-                    <input type="datetime-local" name="matchDate" id="matchDate">
-                </div>
-                <div>
-                    <fieldset>
-                        <legend>Team1</legend>
-                        <div>
-                            <label for="team1Name">Name:</label>
-                            <input type="text" name="team1Name" id="team1Name">
-                        </div>
-                        <div>
-                            <label for="team1Logo">Link of logo image:</label>
-                            <input type="url" name="team1Logo" id="team1Logo">
-                        </div>
-                        <div>
-                            <label for="team1Score">Score:</label>
-                            <input type="url" name="team1Score" id="team1Score">
-                        </div>
-                    </fieldset>
-                    <fieldset>
-                        <legend>Team2</legend>
-                        <div>
-                            <label for="team2Name">Name:</label>
-                            <input type="text" name="team2Name" id="team2Name">
-                        </div>
-                        <div>
-                            <label for="team2Logo">Link of logo image:</label>
-                            <input type="url" name="team2Logo" id="team2Logo">
-                        </div>
-                        <div>
-                            <label for="team2Score">Score:</label>
-                            <input type="url" name="team2Score" id="team2Score">
-                        </div>
-                    </fieldset>
-                </div>
-            </form>
-
-        </section>
-        <section class="matches">
-            <h2>Visos rungtyės</h2>
-            <div id="matchesContainer">
+  <header></header>
+  <main>
+    <section class="addMatch">
+      <h2>Add New Match</h2>
+      <form id="addNewMatch">
+        <div>
+          <label for="date">Date of the match:</label>
+          <input type="datetime-local" name="date" id="date" required>
+        </div>
+        <div class="teams">
+          <fieldset>
+            <legend>Team1</legend>
+            <div>
+              <label for="teams_0_name">Name:</label>
+              <input type="text" id="teams_0_name" name="teams_0_name" required>
             </div>
-        </section>
-    </main>
-    <footer></footer>
+            <div>
+              <label for="teams_0_logo">Link of logo image:</label>
+              <input type="url" name="teams_0_logo" id="teams_0_logo" required>
+            </div>
+            <div>
+              <label for="teams_0_score">Score:</label>
+              <input type="number" name="teams_0_score" id="teams_0_score" disabled required>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Team2</legend>
+            <div>
+              <label for="teams_1_name">Name:</label>
+              <input type="text" id="teams_1_name" name="teams_1_name" required>
+            </div>
+            <div>
+              <label for="teams_1_logo">Link of logo image:</label>
+              <input type="url" name="teams_1_logo" id="teams_1_logo" required>
+            </div>
+            <div>
+              <label for="teams_1_score">Score:</label>
+              <input type="number" name="teams_1_score" id="teams_1_score" disabled required>
+            </div>
+          </fieldset>
+        </div>
+        <input type="submit" value="Add Match">
+      </form>
+    </section>
+    <section class="matches">
+      <h2>Visos rungtynės</h2>
+      <div id="matchesContainer">
+        <!-- <div class="matchCard">
+          <div class="teams">
+            <div>
+              <img src="https://ssl.gstatic.com/onebox/media/sports/logos/sE2i94Zg7RoeYbDpswDTKA_96x96.png" alt="team1 logo">
+              <h4>Žalgiris</h4>
+              <span>87</span>
+            </div>
+            <div>
+              <img src="https://ssl.gstatic.com/onebox/media/sports/logos/IRVMGMJuRZ-MShr-pWg0GA_96x96.png" alt="team2 logo">
+              <h4>Milano</h4>
+              <span>89</span>
+            </div>
+          </div>
+          <div class="date">
+            <span>Feb 7</span>
+          </div>
+        </div>
+        <div class="matchCard">
+          <div class="teams">
+            <div>
+              <img src="https://ssl.gstatic.com/onebox/media/sports/logos/sE2i94Zg7RoeYbDpswDTKA_96x96.png" alt="team1 logo">
+              <h4>Žalgiris</h4>
+              <span>87</span>
+            </div>
+            <div>
+              <img src="https://ssl.gstatic.com/onebox/media/sports/logos/IRVMGMJuRZ-MShr-pWg0GA_96x96.png" alt="team2 logo">
+              <h4>Milano</h4>
+              <span>89</span>
+            </div>
+          </div>
+          <div class="date">
+            <span>Feb 7</span>
+          </div>
+        </div>
+        <div class="matchCard">
+          <div class="teams">
+            <div>
+              <img src="https://ssl.gstatic.com/onebox/media/sports/logos/sE2i94Zg7RoeYbDpswDTKA_96x96.png" alt="team1 logo">
+              <h4>Žalgiris</h4>
+              <span>87</span>
+            </div>
+            <div>
+              <img src="https://ssl.gstatic.com/onebox/media/sports/logos/IRVMGMJuRZ-MShr-pWg0GA_96x96.png" alt="team2 logo">
+              <h4>Milano</h4>
+              <span>89</span>
+            </div>
+          </div>
+          <div class="date">
+            <span>Feb 7</span>
+          </div>
+        </div>
+        <div class="matchCard">
+          <div class="teams">
+            <div>
+              <img src="https://ssl.gstatic.com/onebox/media/sports/logos/sE2i94Zg7RoeYbDpswDTKA_96x96.png" alt="team1 logo">
+              <h4>Žalgiris</h4>
+              <span>87</span>
+            </div>
+            <div>
+              <img src="https://ssl.gstatic.com/onebox/media/sports/logos/IRVMGMJuRZ-MShr-pWg0GA_96x96.png" alt="team2 logo">
+              <h4>Milano</h4>
+              <span>89</span>
+            </div>
+          </div>
+          <div class="date">
+            <span>Feb 7</span>
+          </div>
+        </div> -->
+      </div>
+    </section>
+  </main>
+  <footer></footer>
 </body>
 </html>

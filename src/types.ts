@@ -1,13 +1,13 @@
 type Team = {
     name: string,
-    score: number,
+    score?: number,
     logo: string,
-}
-
-type Match = {
+    [key: string]: string | number | boolean | undefined
+  }
+  type Match = {
     id: string,
     date: string,
     teams: [Team, Team]
-}
-
-export { Team, Match };
+  }
+  
+  export { Team, Match };

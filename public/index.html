@@ -10,7 +10,48 @@
 <body>
     <header></header>
     <main>
-        <!-- <section></section> -->
+        <section>
+            <h2>Add New Match</h2>
+            <form id="addNewMatch">
+                <div>
+                    <label for="matchDate">Date of the match:</label>
+                    <input type="datetime-local" name="matchDate" id="matchDate">
+                </div>
+                <div>
+                    <fieldset>
+                        <legend>Team1</legend>
+                        <div>
+                            <label for="team1Name">Name:</label>
+                            <input type="text" name="team1Name" id="team1Name">
+                        </div>
+                        <div>
+                            <label for="team1Logo">Link of logo image:</label>
+                            <input type="url" name="team1Logo" id="team1Logo">
+                        </div>
+                        <div>
+                            <label for="team1Score">Score:</label>
+                            <input type="url" name="team1Score" id="team1Score">
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Team2</legend>
+                        <div>
+                            <label for="team2Name">Name:</label>
+                            <input type="text" name="team2Name" id="team2Name">
+                        </div>
+                        <div>
+                            <label for="team2Logo">Link of logo image:</label>
+                            <input type="url" name="team2Logo" id="team2Logo">
+                        </div>
+                        <div>
+                            <label for="team2Score">Score:</label>
+                            <input type="url" name="team2Score" id="team2Score">
+                        </div>
+                    </fieldset>
+                </div>
+            </form>
+
+        </section>
         <section class="matches">
             <h2>Visos rungtyės</h2>
             <div id="matchesContainer">

@@ -37,7 +37,7 @@ export default class MatchCard{
     dateDiv.classList.add('date');
 
     const dateSpan = document.createElement('span');
-    dateSpan.textContent = this.returnMatchDate(this.match.date);
+    dateSpan.innerHTML = this.returnMatchDate(this.match.date);
 
     dateDiv.appendChild(dateSpan);
     
@@ -47,13 +47,24 @@ export default class MatchCard{
 
   returnMatchDate(matchDate:string): string{
     const today = new Date().toISOString().split('T')[0];
-    // const matchHour = matchDate.split('T')[1];
+    const matchHour = matchDate.split('T')[1];
 
     if(new Date(matchDate) < new Date(today)){
-      console.log(matchDate, 'buvo');
-    } else if(new Date(matchDate.slice(0,10)) === new Date(today)){
-      console.log(matchDate, 'yra');
-    } 
-    return matchDate;
+      // console.log(matchDate, 'buvo'); // Feb 6
+      return `${(new Date(matchDate)).toString().slice(4,10)}`;
+    } else if(matchDate.slice(0,10) === today){
+      // console.log(matchDate, 'yra'); // Today   21:30
+      return `Today <br> ${matchHour}`;
+    } else if(new Date(matchDate).toDateString() === new Date(new Date().setDate(new Date().getDate() + 1)).toDateString()){
+      // console.log(matchDate, 'rytoj'); // Tomorrow   21:30
+      return `Tomorrow <br> ${matchHour}`;
+    } else {
+      // console.log(matchDate, 'vėliau nei ryt'); // Wed, Feb 28   21:30
+      return `
+        ${(new Date(matchDate)).toString().slice(0,3)},
+        ${(new Date(matchDate)).toString().slice(4,10)}
+        <br>${matchHour}
+      `;
+    }
   }
 }

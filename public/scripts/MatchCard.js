@@ -57,5 +57,36 @@ export default class MatchCard {
     }
     deleteCard(matchCard) {
         console.log(matchCard);
+        const deleteConfirmModal = document.createElement('dialog');
+        matchCard.appendChild(deleteConfirmModal);
+        deleteConfirmModal.showModal();
+        const deleteConfirmText = document.createElement('h3');
+        deleteConfirmText.textContent = 'Are you sure you want to delete this?';
+        const cancelDeleteButton = document.createElement('button');
+        cancelDeleteButton.textContent = 'No';
+        const confirDeleteButton = document.createElement('button');
+        confirDeleteButton.textContent = 'Yes';
+        deleteConfirmModal.append(deleteConfirmText, cancelDeleteButton, confirDeleteButton);
+        cancelDeleteButton.addEventListener('click', () => {
+            deleteConfirmModal.remove();
+        });
+        deleteConfirmModal.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                deleteConfirmModal.remove();
+            }
+        });
+        deleteConfirmModal.addEventListener('click', e => {
+            if (e.offsetX < 0 || e.offsetY < 0 ||
+                e.offsetX > deleteConfirmModal.offsetWidth ||
+                e.offsetY > deleteConfirmModal.offsetHeight) {
+                deleteConfirmModal.remove();
+            }
+        });
+        confirDeleteButton.addEventListener('click', () => {
+            fetch(`http://localhost:8080/eurolyga/${this.match.id}`, {
+                method: "DELETE"
+            })
+                .then(res => res.status === 200 && matchCard.remove());
+        });
     }
 }

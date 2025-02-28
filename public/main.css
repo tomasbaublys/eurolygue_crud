@@ -8,6 +8,10 @@
     margin: 0;
     background-color: #c2c3c3;
   }
+
+  body:has(dialog[open]) {
+    overflow: hidden;
+  }
   
   main{
     padding: 50px;
@@ -124,6 +128,24 @@
           > i.bi-trash-fill:hover {
             transform: scale(1.5);
             cursor: pointer;
+          }
+          > dialog {
+            padding: 20px 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-auto-rows: 1fr 1fr;
+            place-items: center;
+
+            > h3 {
+              grid-column: span 2;
+              font-size: 1.8rem;
+            }
+            > button {
+              font-size: 1.2rem;
+              font-weight: bold;
+              padding: 10px 30px;
+              cursor: pointer;
+            }
           }
         }
       }

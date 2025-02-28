@@ -1,6 +1,5 @@
 export default class MatchCard {
     constructor(props) {
-        console.log(props);
         this.match = props;
     }
     render() {
@@ -30,7 +29,10 @@ export default class MatchCard {
         const dateSpan = document.createElement('span');
         dateSpan.innerHTML = this.returnMatchDate(this.match.date);
         dateDiv.appendChild(dateSpan);
-        matchCard.append(teamsDiv, dateDiv);
+        const deleteIcon = document.createElement('i');
+        deleteIcon.classList.add('bi', 'bi-trash-fill');
+        deleteIcon.addEventListener('click', () => this.deleteCard(matchCard));
+        matchCard.append(teamsDiv, dateDiv, deleteIcon);
         return matchCard;
     }
     returnMatchDate(matchDate) {
@@ -52,5 +54,8 @@ export default class MatchCard {
         <br>${matchHour}
       `;
         }
+    }
+    deleteCard(matchCard) {
+        console.log(matchCard);
     }
 }

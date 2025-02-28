@@ -3,7 +3,6 @@ import { Match } from "./types.js";
 export default class MatchCard{
   private match: Match;
   constructor(props: Match){
-    console.log(props);
     this.match = props;
   }
   render(){
@@ -41,11 +40,14 @@ export default class MatchCard{
     dateSpan.innerHTML = this.returnMatchDate(this.match.date);
 
     dateDiv.appendChild(dateSpan);
+
+    const deleteIcon = document.createElement('i');
+    deleteIcon.classList.add('bi', 'bi-trash-fill');
+    deleteIcon.addEventListener('click', () => this.deleteCard(matchCard));
     
-    matchCard.append(teamsDiv, dateDiv);
+    matchCard.append(teamsDiv, dateDiv, deleteIcon);
     return matchCard;
   }
-
   returnMatchDate(matchDate:string): string{
     const today = new Date().toISOString().split('T')[0];
     const matchHour = matchDate.split('T')[1];
@@ -67,5 +69,8 @@ export default class MatchCard{
         <br>${matchHour}
       `;
     }
+  }
+  deleteCard(matchCard: HTMLDivElement) {
+    console.log(matchCard);
   }
 }
